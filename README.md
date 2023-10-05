@@ -70,6 +70,8 @@ git add index.html 表示只跟踪index.html一个文件
 ## git commit -m "1st zw" 
 ```
 git commit -m "1st zw" 提交版本记录
+git commit 命令进行提交，其中-m 选项后面是本次的提交消息，用来对提交的内容左进一步的描述
+
 ```
 ## git remot 
 ```
@@ -96,4 +98,11 @@ git config --global user.email “913197160@qq.com”
 工作区中的每一个文件可能有 4 种状态，这四种状态共分为两大类，如图所示：
 ```
 ![image](ReadMeP1.PNG)
+
+## 错误解决
+```
+warning: in the working copy of 'index.html', LF will be replaced by CRLF the next time Git touches it
+解决命令： git config --global core.autocrlf false
+```
+
 
