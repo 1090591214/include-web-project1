@@ -73,8 +73,34 @@ git commit -m "1st zw" 提交版本记录
 git commit 命令进行提交，其中-m 选项后面是本次的提交消息，用来对提交的内容左进一步的描述
 
 ```
-## git remot 
+## git remot 本地仓库上传到远程仓库
+![image](ReadMeP2.PNG)
 ```
+ git branch        查看本地分支
+ git branch -r     查看远程分支
+ git branch -a     查看本地+远程分支
+
+【1】git remote add origin https://github.com/zhengwei9948/include-web-project1.git 
+将本地仓库中的内容推送到远程的 origin 仓库中。
+如果出现此错误 fatal:remote origin already exists，输入以下命令即可。
+git remote rm origin
+
+
+【2】git branch -M main 将默认分支从”master”改名为”main”,一般不用重命名，保持默认的master就行
+https://deepinout.com/git/git-questions/181_git_what_does_the_m_mean_in_git_branch_m_main.html
+
+【3】git push -u origin main：将本地仓库推送到被重命名后的远程仓库中。
+如果报错：fatal:unable to access 'https://github.com/....'
+解决办法：git config --global https.sslVerify "false" 输入 git push -u origin main 命令，会弹出一个登录的窗口，只需要输入 github 对
+应的用户名和密码即可完成将代码托管到 github 创建的仓库中
+
+
+```
+## git remote -v
+```
+查看远程仓库列表
+git remote show origin
+除了列表信息外，还可以通过Git命令查看所有远程仓库的详细信息，包括它们的名称、URL地址、fetch和push的分支以及其他配置信息
 
 ```
 ## git --version
@@ -103,6 +129,30 @@ git config --global user.email “913197160@qq.com”
 ```
 warning: in the working copy of 'index.html', LF will be replaced by CRLF the next time Git touches it
 解决命令： git config --global core.autocrlf false
+```
+
+## 查看提交历史
+```
+【1】按照时间先后顺序列出所有的提交历史，最近的提交排在最上面：$ git log
+【2】只展示最新的两条提交历史，数字可以按需进行填写：$ git log -2
+【3】在一行上展示最近两条提交历史的信息：$ git log -2 --pretty=oneline
+【4】在一行上展示最近两条提交历史的信息，并自定义输出的格式，如下：
+ %h：表示提交简写的哈希值。
+ %an：作者名字
+ %ar:作者修订日期，按多久以前的方式显示
+ %s:提交说明
+ 命令：$ git log -2 --pretty=format:“ %h | %an | %ar | %s ”
+ 注意自定义格式中有双引号
+```
+## 回退到指定版本
+```
+【1】使用 git reset --hard 命令，根据指定的提交 id 回退到指定的版本：
+     git reset --hard <CommitId>
+
+【2】当操作了以上命令切回到旧版本后，还想展示所有的历史，就需要使用以下命令：
+     git reflog --pretty=oneline
+     然后再根据最新的提交 Id，跳转到最新的版本即可
+
 ```
 
 
