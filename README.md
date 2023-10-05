@@ -36,7 +36,9 @@ npm run build
 https://git-scm.com/
 https://git-scm.com/downloads
 https://git-scm.com/docs/git
+
 ```
+
 ## git init  
 ```
 初始化分布式本地仓库,通过vue脚手架创建的项目是没有初始化本地仓库的，需要执行此命令操作
@@ -152,6 +154,56 @@ warning: in the working copy of 'index.html', LF will be replaced by CRLF the ne
 【2】当操作了以上命令切回到旧版本后，还想展示所有的历史，就需要使用以下命令：
      git reflog --pretty=oneline
      然后再根据最新的提交 Id，跳转到最新的版本即可
+
+```
+## 从远程仓库克隆代码到本地的方式
+在对应的目录执行clone命令即可
+git clone https://github.com/zhengwei9948/include-web-project1.git
+```
+Git教程 git pull 和 git clone的区别
+  使用方法
+  有权限的仓库 本地无代码
+  git pull
+  git clone
+  有权限的仓库 本地有代码
+  git pull
+  无权限的仓库 本地无代码
+  git clone
+  无权限的仓库 本地有代码
+  删了重新下
+
+  git pull适用于从用户有权限的仓库下拉代码，不管本地有没有代码。
+  自已有权限的仓库指的是自己的，或者团队中我们可以使用的仓库。
+  要使用git pull首先你要确定已经连接远程仓库
+
+在使用Git进行版本控制时，我们经常需要将远程仓库的代码拉取到本地进行开发或者查看。
+参考:http://www.mobiletrain.org/about/BBS/162158.html
+
+1. 设置远程仓库地址
+在拉取代码之前，我们首先需要设置远程仓库的地址。使用以下命令可以将远程仓库的地址设置为origin：
+git remote add origin https://github.com/zhengwei9948/include-web-project1.git 
+
+2. 拉取远程分支
+在设置好远程仓库地址后，我们可以使用以下命令拉取远程分支的代码到本地
+git pull origin <远程分支名>
+其中，<远程分支名>是指要拉取的远程分支的名称。例如，如果要拉取名为main的远程分支的代码，那么命令应为：git pull origin main
+
+3. 拉取特定的提交
+有时候，我们可能只需要拉取某个特定的提交，而不是整个分支的代码。可以使用以下命令拉取特定的提交：
+git cherry-pick <提交哈希值>
+其中，<提交哈希值>是指要拉取的提交的哈希值。例如，如果要拉取哈希值为abcde的提交，那么命令应为：
+git cherry-pick abcde
+
+4. 拉取所有远程分支
+除了拉取单个远程分支的代码，我们还可以一次性拉取所有的远程分支。使用以下命令可以拉取所有远程分支的代码到本地：
+git pull --all
+这个命令会拉取所有远程分支的最新代码，并在本地创建对应的分支。
+
+5. 拉取指定文件或目录
+有时候，我们只需要拉取远程仓库中的某个文件或者某个目录的代码。可以使用以下命令拉取指定文件或目录：
+git checkout <远程分支名> -- <文件路径或目录路径>
+其中，<远程分支名>是指要拉取的远程分支的名称，<文件路径或目录路径>是指要拉取的文件或目录的路径。例如，如果要拉取develop分支下的src目录的代码，那么命令应为：
+git checkout develop -- src
 
 ```
 
