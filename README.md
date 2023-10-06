@@ -206,5 +206,21 @@ git checkout <远程分支名> -- <文件路径或目录路径>
 git checkout develop -- src
 
 ```
+## Git: 如何保护分支免受其他开发人员的删除或修改
+```
+防止其被其他开发人员误删除。Git是一个分布式版本控制系统，它为团队协作提供了灵活性和效率。然而，由于多人同时使用Git进行开发，意外的分支删除可能会导致代码丢失和团队合作中的问题。因此，保护分支免受误删除是非常重要的
 
+```
+### 为什么需要保护分支？
+```
+在协作开发过程中，每个开发人员都在Git上创建和管理自己的分支。这些分支各自独立工作，但最终都要合并到主分支上。然而，有时候开发人员可能会无意中删除一个重要的分支，这可能导致代码丢失和团队延误。为了避免这种情况发生，我们需要采取措施来保护分支。
+```
+## GitHub如何保护分支
+![image](ReadMeP3.PNG)
+![image](ReadMeP4.PNG)
+![image](ReadMeP5.PNG)
+![image](ReadMeP6.PNG)
+```
+https://docs.github.com/zh/enterprise-server@3.7/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/managing-a-branch-protection-rule
+```
 
