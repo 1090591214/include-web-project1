@@ -127,6 +127,7 @@ git config --global user.email “913197160@qq.com”
 ```
 ![image](ReadMeP1.png)
 
+
 ## 错误解决
 ```
 warning: in the working copy of 'index.html', LF will be replaced by CRLF the next time Git touches it
