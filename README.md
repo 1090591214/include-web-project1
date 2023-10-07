@@ -125,7 +125,7 @@ git config --global user.email “913197160@qq.com”
 ```
 工作区中的每一个文件可能有 4 种状态，这四种状态共分为两大类，如图所示：
 ```
-![image](ReadMeP1.png)
+![image](ReadMeP2.PNG)
 
 
 ## 错误解决
